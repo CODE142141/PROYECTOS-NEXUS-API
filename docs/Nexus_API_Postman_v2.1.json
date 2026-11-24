@@ -1,0 +1,1117 @@
+{
+  "info": {
+    "_postman_id": "f89379d8-f144-4000-bab1-d1af0a807b65",
+    "name": "Nexus Admin DB - API REST MVC",
+    "description": "Colección de pruebas CRUD para las 7 tablas de NEXUS_ADMIN_DB.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0. Estado General API",
+      "item": [
+        {
+          "name": "GET Índice de Endpoints",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "1. Módulo Roles",
+      "item": [
+        {
+          "name": "GET Listar Roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Rol por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/roles/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "roles",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Crear Rol",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "roles"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Auditor Interno\",\n  \"descripcion\": \"Revisión de operaciones y reportes financieros\",\n  \"estado\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Actualizar Rol",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/roles/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "roles",
+                "5"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Auditoría general y control de calidad\",\n  \"estado\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Eliminar Rol",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/roles/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "roles",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Módulo Usuarios",
+      "item": [
+        {
+          "name": "GET Listar Usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Usuario por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/usuarios/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Crear Usuario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "usuarios"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_rol\": 3,\n  \"nombre\": \"Valeria Torres\",\n  \"email\": \"valeria.torres@nexus.com\",\n  \"clave\": \"ClaveSegura2026\",\n  \"telefono\": \"988776655\",\n  \"estado\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Actualizar Usuario",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/usuarios/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "usuarios",
+                "6"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"telefono\": \"999111222\",\n  \"estado\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Eliminar Usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/usuarios/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "usuarios",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Módulo Categorías",
+      "item": [
+        {
+          "name": "GET Listar Categorías",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/categorias",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "categorias"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Categoría por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/categorias/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "categorias",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Crear Categoría",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/categorias",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "categorias"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Seguridad Electrónica\",\n  \"descripcion\": \"Cámaras IP, control biométrico y alarmas\",\n  \"activo\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Actualizar Categoría",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/categorias/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "categorias",
+                "6"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Sistemas de videovigilancia y control de acceso\",\n  \"activo\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Eliminar Categoría",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/categorias/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "categorias",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. Módulo Clientes",
+      "item": [
+        {
+          "name": "GET Listar Clientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/clientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "clientes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Cliente por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/clientes/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "clientes",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Crear Cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/clientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "clientes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipo_documento\": \"DNI\",\n  \"numero_documento\": \"46781234\",\n  \"nombres_razon_social\": \"Diego Salazar Méndez\",\n  \"correo\": \"diego.salazar@correo.pe\",\n  \"telefono\": \"987112233\",\n  \"direccion\": \"Av. La Molina 1450, Lima\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Actualizar Cliente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/clientes/7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "clientes",
+                "7"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"telefono\": \"987000999\",\n  \"direccion\": \"Av. Javier Prado Este 4520, La Molina\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Eliminar Cliente",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/clientes/7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "clientes",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "5. Módulo Productos",
+      "item": [
+        {
+          "name": "GET Listar Productos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/productos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "productos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Producto por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/productos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "productos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Crear Producto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/productos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "productos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_categoria\": 2,\n  \"codigo_sku\": \"PRD-ACC-03\",\n  \"nombre\": \"Hub USB-C 7 en 1 Nexus\",\n  \"descripcion\": \"HDMI 4K, PD 100W, 3 puertos USB 3.0\",\n  \"precio_unitario\": 145.0,\n  \"stock\": 30,\n  \"activo\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Actualizar Producto",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/productos/8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "productos",
+                "8"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"precio_unitario\": 139.9,\n  \"stock\": 25\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Eliminar Producto",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/productos/8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "productos",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "6. Módulo Pedidos",
+      "item": [
+        {
+          "name": "GET Listar Pedidos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Pedido por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/pedidos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "pedidos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Crear Pedido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "pedidos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_cliente\": 1,\n  \"id_usuario\": 3,\n  \"estado\": \"PENDIENTE\",\n  \"subtotal\": 180.0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Actualizar Pedido",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/pedidos/7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "pedidos",
+                "7"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"estado\": \"PAGADO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Eliminar Pedido",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/pedidos/7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "pedidos",
+                "7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "7. Módulo Detalles_Pedido",
+      "item": [
+        {
+          "name": "GET Listar Detalles Pedido",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/detalles-pedido",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "detalles-pedido"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Detalle Pedido por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/detalles-pedido/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "detalles-pedido",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Crear Detalle Pedido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/detalles-pedido",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "detalles-pedido"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_pedido\": 5,\n  \"id_producto\": 3,\n  \"cantidad\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Actualizar Detalle Pedido",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/detalles-pedido/8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "detalles-pedido",
+                "8"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cantidad\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Eliminar Detalle Pedido",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/detalles-pedido/8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "detalles-pedido",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "8. Casos de Validación y Errores HTTP",
+      "item": [
+        {
+          "name": "404 Recurso Inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/inexistente",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "inexistente"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 ID No Encontrado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/productos/9999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "productos",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 Campo Obligatorio Faltante",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "roles"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 Violación FK o CHECK",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost/PROYECTOS-NEXUS/api/productos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "PROYECTOS-NEXUS",
+                "api",
+                "productos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_categoria\": 999,\n  \"codigo_sku\": \"ERR-01\",\n  \"nombre\": \"Prueba Error\",\n  \"precio_unitario\": -50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

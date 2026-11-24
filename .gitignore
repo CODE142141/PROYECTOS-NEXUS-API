@@ -1,0 +1,12 @@
+# Variables de entorno con credenciales sensibles
+.env
+
+# Dependencias (Excluidas según rúbrica de entrega)
+node_modules/
+vendor/
+
+# Archivos temporales y de sistema
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
